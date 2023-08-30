@@ -25,3 +25,9 @@ The Student Mark Management System is a simple Java project that allows you to m
 
 ## Contributing
 Contributions are welcome! If you find any issues or would like to enhance the functionality, feel free to create a pull request.
+
+Clone the repo by
+```bash
+git clone https://github.com/aswinbennyofficial/Student-Mark-Management.git
+
+```
