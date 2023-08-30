@@ -1,6 +1,5 @@
 package org.aswinbenny;
 
-import javax.lang.model.element.Name;
 import java.sql.*;
 import java.util.Scanner;
 
@@ -15,39 +14,67 @@ public class Main {
 //            displayTable(conn);
 //        }
 
-        if(conn!=null){
-            addStudentDetails(conn);
+//        if(conn!=null){
+//            addStudentDetails(conn);
+//        }
+
+//        if(conn!=null){
+//            createNewClass(conn);
+//        }
+
+        if (conn != null) {
+            createNewClass(conn);
         }
 
     }
 
+    public static void createNewClass(Connection conn){
+        try {
+            String name_of_class;
+
+            Scanner sc_ob2=new Scanner(System.in);
+            System.out.println("Enter the name of new Class: ");
+            name_of_class=sc_ob2.next();
+
+            String query="CREATE TABLE "+name_of_class+" (Rollno int, Name varchar(35), Physics int, Maths int, Chemistry int, Biology int)";
+
+            PreparedStatement pstmt2=conn.prepareStatement(query);
+            pstmt2.executeUpdate();
+            System.out.println("Class "+name_of_class+" added successdully");
+
+        }catch (Exception e){
+            System.out.println("Error in createNewClass(): "+e);
+        }
+
+    }
     public static void addStudentDetails(Connection conn){
         try{
             String query=" INSERT INTO class2 (Rollno,Name,Physics,Maths,Chemistry,Biology) VALUES(?,?,?,?,?,?)";
             PreparedStatement pstmt=conn.prepareStatement(query);
 
-            Scanner sc=new Scanner(System.in);
+            Scanner sc_ob1=new Scanner(System.in);
             //initialising variables
             String name;
             int rollno,physics,maths,chemistry,biology,no_of_students;
 
             System.out.println("Enter the number of students to add: ");
-            no_of_students=sc.nextInt();
+            no_of_students=sc_ob1.nextInt();
 
             while (no_of_students > 0) {
                 //taking input from user
                 System.out.println("Enter the roll no: ");
-                rollno = sc.nextInt();
+                rollno = sc_ob1.nextInt();
+                sc_ob1.nextLine(); // consumes newline character
                 System.out.println("Enter student name: ");
-                name = sc.next();
+                name = sc_ob1.nextLine();
                 System.out.println("Enter marks of Physics: ");
-                physics = sc.nextInt();
+                physics = sc_ob1.nextInt();
                 System.out.println("Enter marks of Maths: ");
-                maths = sc.nextInt();
+                maths = sc_ob1.nextInt();
                 System.out.println("Enter marks of Chemisitry: ");
-                chemistry = sc.nextInt();
+                chemistry = sc_ob1.nextInt();
                 System.out.println("Enter marks of Biology: ");
-                biology = sc.nextInt();
+                biology = sc_ob1.nextInt();
                 System.out.println();//adding an extra line for looks
 
                 pstmt.setInt(1, rollno);

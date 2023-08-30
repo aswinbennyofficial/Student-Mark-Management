@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="">
+    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="addStudentDetails and displayTable functions added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,11 +55,24 @@
       <updated>1693332517631</updated>
       <workItem from="1693332518813" duration="3142000" />
       <workItem from="1693335753731" duration="443000" />
-      <workItem from="1693412162999" duration="4067000" />
+      <workItem from="1693412162999" duration="5334000" />
     </task>
+    <task id="LOCAL-00001" summary="addStudentDetails and displayTable functions added">
+      <option name="closed" value="true" />
+      <created>1693416613491</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693416613491</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="addStudentDetails and displayTable functions added" />
+    <option name="LAST_COMMIT_MESSAGE" value="addStudentDetails and displayTable functions added" />
   </component>
 </project>
