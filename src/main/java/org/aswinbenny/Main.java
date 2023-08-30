@@ -21,6 +21,9 @@ public class Main {
 
     }
 
+    /*
+    editMarkSheet function is used to edit the marks and name of the student by entering their rollno
+     */
     public static void editMarkSheet(Connection conn){
         try{
             String query="UPDATE class2 SET Name=?, Physics=?, Maths=?, Chemistry=?, Biology=? WHERE Rollno=?";
@@ -30,10 +33,10 @@ public class Main {
             Scanner sc_obj3=new Scanner(System.in);
             int rollno,physics,maths,chemistry,biology;
             String name;
-            System.out.println("Enter the Rollno whose details has to be changed; ");
+            System.out.println("Enter the Rollno whose details has to be changed: ");
             rollno=sc_obj3.nextInt();
             sc_obj3.nextLine(); //eliminating newline
-            System.out.println("Enter new name; ");
+            System.out.println("Enter new name: ");
             name=sc_obj3.nextLine();
             System.out.println("Enter new physics marks: ");
             physics=sc_obj3.nextInt();
@@ -58,6 +61,11 @@ public class Main {
             System.out.println("Error in editMarkSheet(): "+e);
         }
     }
+
+
+    /*
+    showClasses function displays all the marksheets that are available in the school
+     */
     public static void showClasses(Connection conn){
         try{
             String query="SHOW TABLES";
@@ -75,6 +83,10 @@ public class Main {
         }
 
     }
+
+    /*
+    createNewClass is used to create a new class or a new marksheet for the school
+     */
     public static void createNewClass(Connection conn){
         try {
             String name_of_class;
@@ -94,6 +106,11 @@ public class Main {
         }
 
     }
+
+
+    /*
+    addStudentDetails is used to add the new student details to the marksheet
+     */
     public static void addStudentDetails(Connection conn){
         try{
             String query=" INSERT INTO class2 (Rollno,Name,Physics,Maths,Chemistry,Biology) VALUES(?,?,?,?,?,?)";
@@ -142,6 +159,11 @@ public class Main {
         }
 
     }
+
+
+    /*
+    displayTable will display the marksheet containing rollno, name and subject marks
+     */
     public static void displayTable(Connection conn){
         try{
             String query="SELECT * FROM class2"; //query to select all from table
@@ -175,6 +197,11 @@ public class Main {
 
 
     }
+
+
+    /*
+    connectDB is used to establish connection with mysql database
+     */
     public static Connection connectDb(){
         try{
 
