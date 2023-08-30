@@ -22,12 +22,33 @@ public class Main {
 //            createNewClass(conn);
 //        }
 
-        if (conn != null) {
-            createNewClass(conn);
+//        if (conn != null) {
+//            createNewClass(conn);
+//        }
+
+        if(conn!=null){
+            showClasses(conn);
         }
 
     }
 
+    public static void showClasses(Connection conn){
+        try{
+            String query="SHOW TABLES";
+            PreparedStatement pstmt3= conn.prepareStatement(query);
+            ResultSet set=pstmt3.executeQuery();
+
+            String table_names;
+            System.out.println("Here are the list of classes in our school: ");
+            while(set.next()){
+                table_names=set.getString(1);
+                System.out.println(table_names);
+            }
+        }catch (Exception e){
+            System.out.println("Error in showClasses(): "+e);
+        }
+
+    }
     public static void createNewClass(Connection conn){
         try {
             String name_of_class;
