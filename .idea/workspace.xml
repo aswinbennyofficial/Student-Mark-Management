@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="createNewClass function added">
+    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="showClasses function added">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +54,7 @@
       <updated>1693332517631</updated>
       <workItem from="1693332518813" duration="3142000" />
       <workItem from="1693335753731" duration="443000" />
-      <workItem from="1693412162999" duration="5750000" />
+      <workItem from="1693412162999" duration="6140000" />
     </task>
     <task id="LOCAL-00001" summary="addStudentDetails and displayTable functions added">
       <option name="closed" value="true" />
@@ -72,7 +72,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693417871193</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="showClasses function added">
+      <option name="closed" value="true" />
+      <created>1693418327396</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693418327396</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,6 +89,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="addStudentDetails and displayTable functions added" />
     <MESSAGE value="createNewClass function added" />
-    <option name="LAST_COMMIT_MESSAGE" value="createNewClass function added" />
+    <MESSAGE value="showClasses function added" />
+    <option name="LAST_COMMIT_MESSAGE" value="showClasses function added" />
   </component>
 </project>

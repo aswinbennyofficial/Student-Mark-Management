@@ -10,9 +10,9 @@ public class Main {
 
 
         Connection conn=connectDb(); //function to connect to db
-//        if(conn!=null){
-//            displayTable(conn);
-//        }
+        if(conn!=null){
+            displayTable(conn);
+        }
 
 //        if(conn!=null){
 //            addStudentDetails(conn);
@@ -26,9 +26,9 @@ public class Main {
 //            createNewClass(conn);
 //        }
 
-        if(conn!=null){
-            showClasses(conn);
-        }
+//        if(conn!=null){
+//            showClasses(conn);
+//        }
 
     }
 
@@ -122,18 +122,26 @@ public class Main {
             PreparedStatement pstmt=conn.prepareStatement(query);
             ResultSet set= pstmt.executeQuery(); //stores the out in a Resultset called set
 
-            //System.out.println("RollNo  Name  Physics Chemistry Maths Biology");
-            while (set.next()){
-                int id=set.getInt(1); //1 is column index
-                String name=set.getString(2);
-                int physics=set.getInt(3);
-                int maths=set.getInt(4);
-                int chemistry=set.getInt(5);
-                int biology=set.getInt(6);
 
-                System.out.println("Rollno:"+id+"  Name:"+name+"  Physics:"+physics+"  Maths:"+maths+"  Chemistry:"+chemistry+"  Biology:"+biology);
+            System.out.println("RollNo   Name           Physics   Chemistry   Maths   Biology");
+            while (set.next()) {
+                int id = set.getInt(1); // 1 is column index
+                String name = set.getString(2);
+                int physics = set.getInt(3);
+                int maths = set.getInt(4);
+                int chemistry = set.getInt(5);
+                int biology = set.getInt(6);
 
+                String formattedId = String.format("%-9d", id);         // Adjust the width as needed
+                String formattedName = String.format("%-15s", name);    // Adjust the width as needed
+                String formattedPhysics = String.format("%-10d", physics);
+                String formattedChemistry = String.format("%-12d", chemistry);
+                String formattedMaths = String.format("%-8d", maths);
+                String formattedBiology = String.format("%-8d", biology);
+
+                System.out.println(formattedId + formattedName + formattedPhysics + formattedChemistry + formattedMaths + formattedBiology);
             }
+
 
         }catch (Exception e){
             System.out.println("Error occured in displayTable(): "+e);
