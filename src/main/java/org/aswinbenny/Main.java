@@ -11,27 +11,53 @@ public class Main {
 
         Connection conn=connectDb(); //function to connect to db
         if(conn!=null){
-            displayTable(conn);
+//            displayTable(conn);
+//            addStudentDetails(conn);
+//            createNewClass(conn);
+//            showClasses(conn);
+            editMarkSheet(conn);
         }
 
-//        if(conn!=null){
-//            addStudentDetails(conn);
-//        }
-
-//        if(conn!=null){
-//            createNewClass(conn);
-//        }
-
-//        if (conn != null) {
-//            createNewClass(conn);
-//        }
-
-//        if(conn!=null){
-//            showClasses(conn);
-//        }
 
     }
 
+    public static void editMarkSheet(Connection conn){
+        try{
+            String query="UPDATE class2 SET Name=?, Physics=?, Maths=?, Chemistry=?, Biology=? WHERE Rollno=?";
+
+            PreparedStatement pstmt3=conn.prepareStatement(query);
+
+            Scanner sc_obj3=new Scanner(System.in);
+            int rollno,physics,maths,chemistry,biology;
+            String name;
+            System.out.println("Enter the Rollno whose details has to be changed; ");
+            rollno=sc_obj3.nextInt();
+            sc_obj3.nextLine(); //eliminating newline
+            System.out.println("Enter new name; ");
+            name=sc_obj3.nextLine();
+            System.out.println("Enter new physics marks: ");
+            physics=sc_obj3.nextInt();
+            System.out.println("Enter new maths marks: ");
+            maths=sc_obj3.nextInt();
+            System.out.println("Enter new chemistry marks: ");
+            chemistry=sc_obj3.nextInt();
+            System.out.println("Enter new biology marks: ");
+            biology=sc_obj3.nextInt();
+
+            pstmt3.setString(1,name);
+            pstmt3.setInt(2,physics);
+            pstmt3.setInt(3,maths);
+            pstmt3.setInt(4,chemistry);
+            pstmt3.setInt(5,biology);
+            pstmt3.setInt(6,rollno);
+
+            pstmt3.executeUpdate();
+            System.out.println("Student details updated.");
+
+        }catch (Exception e){
+            System.out.println("Error in editMarkSheet(): "+e);
+        }
+    }
     public static void showClasses(Connection conn){
         try{
             String query="SHOW TABLES";
@@ -57,7 +83,7 @@ public class Main {
             System.out.println("Enter the name of new Class: ");
             name_of_class=sc_ob2.next();
 
-            String query="CREATE TABLE "+name_of_class+" (Rollno int, Name varchar(35), Physics int, Maths int, Chemistry int, Biology int)";
+            String query="CREATE TABLE "+name_of_class+" (Rollno int primary key auto_increment, Name varchar(35), Physics int, Maths int, Chemistry int, Biology int)";
 
             PreparedStatement pstmt2=conn.prepareStatement(query);
             pstmt2.executeUpdate();
@@ -83,9 +109,9 @@ public class Main {
 
             while (no_of_students > 0) {
                 //taking input from user
-                System.out.println("Enter the roll no: ");
-                rollno = sc_ob1.nextInt();
-                sc_ob1.nextLine(); // consumes newline character
+//                System.out.println("Enter the roll no: ");
+//                rollno = sc_ob1.nextInt();
+//                sc_ob1.nextLine(); // consumes newline character
                 System.out.println("Enter student name: ");
                 name = sc_ob1.nextLine();
                 System.out.println("Enter marks of Physics: ");
@@ -98,7 +124,7 @@ public class Main {
                 biology = sc_ob1.nextInt();
                 System.out.println();//adding an extra line for looks
 
-                pstmt.setInt(1, rollno);
+               // pstmt.setInt(1, rollno);
                 pstmt.setString(2, name);
                 pstmt.setInt(3, physics);
                 pstmt.setInt(4, maths);
