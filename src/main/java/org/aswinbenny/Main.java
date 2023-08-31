@@ -13,15 +13,18 @@ public class Main {
             Scanner sc_obj6=new Scanner(System.in);
             int choice;
             String marksheet_name;
-            System.out.println("\nSelect a choice:\n1. Choose an existing marksheet\n2. Create a new marksheet\n");
+            System.out.println("\nSelect a choice:\n1. Choose an existing marksheet\n2. Create a new marksheet\n3. Quit program");
             choice=sc_obj6.nextInt();
             if(choice==1){
                 System.out.println("Enter the name of marksheet or class: ");
                 marksheet_name=sc_obj6.next();
                 dashboard(conn,marksheet_name);
             }
-            else{
+            else if(choice==2){
                 createNewClass(conn);
+            }
+            else{
+                conn.close();
             }
 
         }catch (Exception e){
@@ -76,7 +79,6 @@ public class Main {
                 }catch (Exception e){
                     System.out.println("Error occured while closing connection: "+e);
                 }
-
             }
             else {
                 System.out.println(" Wrong selection; Try again\n\n\n");
