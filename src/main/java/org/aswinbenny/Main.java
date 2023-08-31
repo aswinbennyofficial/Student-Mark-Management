@@ -15,7 +15,8 @@ public class Main {
 //            addStudentDetails(conn);
 //            createNewClass(conn);
 //            showClasses(conn);
-            editMarkSheet(conn);
+//            editMarkSheet(conn);
+            deleteClass(conn);
         }
 
 
@@ -62,6 +63,27 @@ public class Main {
         }
     }
 
+
+    /*
+    deleteClass function is used to delete a marksheet or a class in the school
+     */
+    public static void deleteClass(Connection conn){
+        try {
+            Scanner sc_ob4=new Scanner(System.in);
+            String name_of_marksheet;
+            System.out.println("Enter the name of marksheet to delete: ");
+            name_of_marksheet=sc_ob4.next();
+
+            String query="DROP TABLE "+name_of_marksheet;
+
+            PreparedStatement pstmt4= conn.prepareStatement(query);
+            pstmt4.executeUpdate();
+
+            System.out.println("Marksheet deleted successfully ");
+        }catch (Exception e){
+            System.out.println("Error in deleteClass: "+e);
+        }
+    }
 
     /*
     showClasses function displays all the marksheets that are available in the school
