@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="fixed bugs and added dashboard function">
+    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="fixed bugs and added navigation features">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" afterDir="false" />
     </list>
@@ -60,7 +60,7 @@
       <workItem from="1693335753731" duration="443000" />
       <workItem from="1693412162999" duration="8073000" />
       <workItem from="1693497800007" duration="4804000" />
-      <workItem from="1693503005556" duration="939000" />
+      <workItem from="1693503005556" duration="1659000" />
     </task>
     <task id="LOCAL-00001" summary="addStudentDetails and displayTable functions added">
       <option name="closed" value="true" />
@@ -134,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693501754925</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fixed bugs and added navigation features">
+      <option name="closed" value="true" />
+      <created>1693504183571</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1693504183571</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +158,7 @@
     <MESSAGE value="added deleteClass function" />
     <MESSAGE value="fixed bug in addStudentDetails function" />
     <MESSAGE value="fixed bugs and added dashboard function" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs and added dashboard function" />
+    <MESSAGE value="fixed bugs and added navigation features" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs and added navigation features" />
   </component>
 </project>

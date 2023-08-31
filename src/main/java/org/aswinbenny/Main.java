@@ -13,7 +13,7 @@ public class Main {
             Scanner sc_obj6=new Scanner(System.in);
             int choice;
             String marksheet_name;
-            System.out.println("\n\nSelect a choice:\n1. Choose an existing marksheet\n2. Create a new marksheet");
+            System.out.println("\nSelect a choice:\n1. Choose an existing marksheet\n2. Create a new marksheet\n");
             choice=sc_obj6.nextInt();
             if(choice==1){
                 System.out.println("Enter the name of marksheet or class: ");
