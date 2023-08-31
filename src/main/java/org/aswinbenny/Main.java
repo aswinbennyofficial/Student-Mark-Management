@@ -6,6 +6,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        dashboard();
+    }
+
+    public static void dashboard(){
         Connection conn=connectDb(); //function to connect to db
 
         //System.out.println("Program loaded");
@@ -13,8 +17,8 @@ public class Main {
         int choice; //variable to store choice of user
 
 
-        System.out.println("Enter the choice");
-        System.out.println("1. Show available Marksheets\n2. Add Student Details\n3. Create New Marksheet\n4. Show Marksheet contents\n5. Edit Student Details");
+        System.out.println("\n\nEnter the choice");
+        System.out.println("1. Show available Marksheets\n2. Add Student Details\n3. Create New Marksheet\n4. Show Marksheet contents\n5. Edit Student Details\n6. Delete marksheet\n7. Quit program\n");
         choice=sc_obj5.nextInt();
 
 
@@ -22,37 +26,50 @@ public class Main {
         if(conn!=null){
             if(choice==1){
                 showClasses(conn);
+                dashboard();
             }
             else if(choice==2) {
                 addStudentDetails(conn);
+                dashboard();
             }
             else if(choice==3) {
                 createNewClass(conn);
+                dashboard();
             }
             else if(choice==4) {
                 displayTable(conn);
+                dashboard();
             }
             else if(choice==5) {
                 editMarkSheet(conn);
+                dashboard();
             }
             else if(choice==6) {
                 deleteClass(conn);
+                dashboard();
+            }
+            else if(choice==7){
+                try {
+                    conn.close();
+                }catch (Exception e){
+                    System.out.println("Error occured while closing connection: "+e);
+                }
+
             }
             else {
                 System.out.println(" Wrong selection; Try again\n\n\n");
-
+                dashboard();
             }
         }
-
-
     }
+
 
     /*
     editMarkSheet function is used to edit the marks and name of the student by entering their rollno
      */
     public static void editMarkSheet(Connection conn){
         try{
-            String query="UPDATE class2 SET Name=?, Physics=?, Maths=?, Chemistry=?, Biology=? WHERE Rollno=?";
+            String query="UPDATE news SET Name=?, Physics=?, Maths=?, Chemistry=?, Biology=? WHERE Rollno=?";
 
             PreparedStatement pstmt3=conn.prepareStatement(query);
 
@@ -265,7 +282,7 @@ public class Main {
             if(conn.isClosed()){
                 System.out.println("Connection is closed");
             }else{
-                System.out.println("Database connected");
+                //System.out.println("Database connected");
                 return conn;
             }
 
