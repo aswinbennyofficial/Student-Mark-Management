@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="visual improvement">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="visual improvement" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +17,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -59,7 +57,7 @@
       <workItem from="1693335753731" duration="443000" />
       <workItem from="1693412162999" duration="8073000" />
       <workItem from="1693497800007" duration="4804000" />
-      <workItem from="1693503005556" duration="2081000" />
+      <workItem from="1693503005556" duration="2887000" />
     </task>
     <task id="LOCAL-00001" summary="addStudentDetails and displayTable functions added">
       <option name="closed" value="true" />
@@ -149,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693504691402</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="visual improvement">
+      <option name="closed" value="true" />
+      <created>1693505235636</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1693505235636</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

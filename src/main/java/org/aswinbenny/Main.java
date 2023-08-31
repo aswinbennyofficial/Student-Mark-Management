@@ -23,9 +23,7 @@ public class Main {
             else if(choice==2){
                 createNewClass(conn);
             }
-            else{
-                conn.close();
-            }
+
 
         }catch (Exception e){
             System.out.println("Error in main() :"+e);
@@ -71,7 +69,7 @@ public class Main {
             }
             else if(choice==6) {
                 deleteClass(conn);
-                dashboard(conn,marksheet_name);
+
             }
             else if(choice==7){
                 try {
