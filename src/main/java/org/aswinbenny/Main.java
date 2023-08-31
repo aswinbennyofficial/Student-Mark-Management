@@ -6,17 +6,42 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Program loaded");
-
-
         Connection conn=connectDb(); //function to connect to db
+
+        //System.out.println("Program loaded");
+        Scanner sc_obj5=new Scanner(System.in);
+        int choice; //variable to store choice of user
+
+
+        System.out.println("Enter the choice");
+        System.out.println("1. Show available Marksheets\n2. Add Student Details\n3. Create New Marksheet\n4. Show Marksheet contents\n5. Edit Student Details");
+        choice=sc_obj5.nextInt();
+
+
+
         if(conn!=null){
-//            displayTable(conn);
-//            addStudentDetails(conn);
-//            createNewClass(conn);
-//            showClasses(conn);
-//            editMarkSheet(conn);
-            deleteClass(conn);
+            if(choice==1){
+                showClasses(conn);
+            }
+            else if(choice==2) {
+                addStudentDetails(conn);
+            }
+            else if(choice==3) {
+                createNewClass(conn);
+            }
+            else if(choice==4) {
+                displayTable(conn);
+            }
+            else if(choice==5) {
+                editMarkSheet(conn);
+            }
+            else if(choice==6) {
+                deleteClass(conn);
+            }
+            else {
+                System.out.println(" Wrong selection; Try again\n\n\n");
+
+            }
         }
 
 
@@ -135,7 +160,7 @@ public class Main {
      */
     public static void addStudentDetails(Connection conn){
         try{
-            String query=" INSERT INTO class2 (Rollno,Name,Physics,Maths,Chemistry,Biology) VALUES(?,?,?,?,?,?)";
+            String query=" INSERT INTO news (Name,Physics,Maths,Chemistry,Biology) VALUES(?,?,?,?,?)";
             PreparedStatement pstmt=conn.prepareStatement(query);
 
             Scanner sc_ob1=new Scanner(System.in);
@@ -150,7 +175,7 @@ public class Main {
                 //taking input from user
 //                System.out.println("Enter the roll no: ");
 //                rollno = sc_ob1.nextInt();
-//                sc_ob1.nextLine(); // consumes newline character
+                sc_ob1.nextLine(); // consumes newline character
                 System.out.println("Enter student name: ");
                 name = sc_ob1.nextLine();
                 System.out.println("Enter marks of Physics: ");
@@ -164,11 +189,11 @@ public class Main {
                 System.out.println();//adding an extra line for looks
 
                // pstmt.setInt(1, rollno);
-                pstmt.setString(2, name);
-                pstmt.setInt(3, physics);
-                pstmt.setInt(4, maths);
-                pstmt.setInt(5, chemistry);
-                pstmt.setInt(6, biology);
+                pstmt.setString(1, name);
+                pstmt.setInt(2, physics);
+                pstmt.setInt(3, maths);
+                pstmt.setInt(4, chemistry);
+                pstmt.setInt(5, biology);
 
                 pstmt.executeUpdate();
 
@@ -188,7 +213,7 @@ public class Main {
      */
     public static void displayTable(Connection conn){
         try{
-            String query="SELECT * FROM class2"; //query to select all from table
+            String query="SELECT * FROM news"; //query to select all from table
             PreparedStatement pstmt=conn.prepareStatement(query);
             ResultSet set= pstmt.executeQuery(); //stores the out in a Resultset called set
 
