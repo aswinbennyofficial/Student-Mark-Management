@@ -6,11 +6,33 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        dashboard();
+        try{
+            Connection conn=connectDb();
+            showClasses(conn);
+
+            Scanner sc_obj6=new Scanner(System.in);
+            int choice;
+            String marksheet_name;
+            System.out.println("\n\nSelect a choice:\n1. Choose an existing marksheet\n2. Create a new marksheet");
+            choice=sc_obj6.nextInt();
+            if(choice==1){
+                System.out.println("Enter the name of marksheet or class: ");
+                marksheet_name=sc_obj6.next();
+                dashboard(conn,marksheet_name);
+            }
+            else{
+                createNewClass(conn);
+            }
+
+        }catch (Exception e){
+            System.out.println("Error in main() :"+e);
+        }
     }
 
-    public static void dashboard(){
-        Connection conn=connectDb(); //function to connect to db
+    public static void dashboard(Connection conn, String marksheet_name){
+         //function to connect to db
+
+
 
         //System.out.println("Program loaded");
         Scanner sc_obj5=new Scanner(System.in);
@@ -26,27 +48,27 @@ public class Main {
         if(conn!=null){
             if(choice==1){
                 showClasses(conn);
-                dashboard();
+                dashboard(conn,marksheet_name);
             }
             else if(choice==2) {
-                addStudentDetails(conn);
-                dashboard();
+                addStudentDetails(conn,marksheet_name);
+                dashboard(conn,marksheet_name);
             }
             else if(choice==3) {
                 createNewClass(conn);
-                dashboard();
+                dashboard(conn,marksheet_name);
             }
             else if(choice==4) {
-                displayTable(conn);
-                dashboard();
+                displayTable(conn,marksheet_name);
+                dashboard(conn,marksheet_name);
             }
             else if(choice==5) {
-                editMarkSheet(conn);
-                dashboard();
+                editMarkSheet(conn,marksheet_name);
+                dashboard(conn,marksheet_name);
             }
             else if(choice==6) {
                 deleteClass(conn);
-                dashboard();
+                dashboard(conn,marksheet_name);
             }
             else if(choice==7){
                 try {
@@ -58,7 +80,7 @@ public class Main {
             }
             else {
                 System.out.println(" Wrong selection; Try again\n\n\n");
-                dashboard();
+                dashboard(conn,marksheet_name);
             }
         }
     }
@@ -67,9 +89,9 @@ public class Main {
     /*
     editMarkSheet function is used to edit the marks and name of the student by entering their rollno
      */
-    public static void editMarkSheet(Connection conn){
+    public static void editMarkSheet(Connection conn, String marksheet_name){
         try{
-            String query="UPDATE news SET Name=?, Physics=?, Maths=?, Chemistry=?, Biology=? WHERE Rollno=?";
+            String query="UPDATE "+marksheet_name+" SET Name=?, Physics=?, Maths=?, Chemistry=?, Biology=? WHERE Rollno=?";
 
             PreparedStatement pstmt3=conn.prepareStatement(query);
 
@@ -175,9 +197,9 @@ public class Main {
     /*
     addStudentDetails is used to add the new student details to the marksheet
      */
-    public static void addStudentDetails(Connection conn){
+    public static void addStudentDetails(Connection conn, String marksheet_name){
         try{
-            String query=" INSERT INTO news (Name,Physics,Maths,Chemistry,Biology) VALUES(?,?,?,?,?)";
+            String query=" INSERT INTO "+marksheet_name+" (Name,Physics,Maths,Chemistry,Biology) VALUES(?,?,?,?,?)";
             PreparedStatement pstmt=conn.prepareStatement(query);
 
             Scanner sc_ob1=new Scanner(System.in);
@@ -228,9 +250,9 @@ public class Main {
     /*
     displayTable will display the marksheet containing rollno, name and subject marks
      */
-    public static void displayTable(Connection conn){
+    public static void displayTable(Connection conn, String marksheet_name){
         try{
-            String query="SELECT * FROM news"; //query to select all from table
+            String query="SELECT * FROM "+marksheet_name; //query to select all from table
             PreparedStatement pstmt=conn.prepareStatement(query);
             ResultSet set= pstmt.executeQuery(); //stores the out in a Resultset called set
 

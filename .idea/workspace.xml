@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="fixed bug in addStudentDetails function">
+    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="fixed bugs and added dashboard function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" afterDir="false" />
     </list>
@@ -18,6 +18,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -56,7 +59,8 @@
       <workItem from="1693332518813" duration="3142000" />
       <workItem from="1693335753731" duration="443000" />
       <workItem from="1693412162999" duration="8073000" />
-      <workItem from="1693497800007" duration="3624000" />
+      <workItem from="1693497800007" duration="4804000" />
+      <workItem from="1693503005556" duration="939000" />
     </task>
     <task id="LOCAL-00001" summary="addStudentDetails and displayTable functions added">
       <option name="closed" value="true" />
@@ -122,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693500993880</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixed bugs and added dashboard function">
+      <option name="closed" value="true" />
+      <created>1693501754925</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1693501754925</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +149,7 @@
     <MESSAGE value="added some documentation" />
     <MESSAGE value="added deleteClass function" />
     <MESSAGE value="fixed bug in addStudentDetails function" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bug in addStudentDetails function" />
+    <MESSAGE value="fixed bugs and added dashboard function" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs and added dashboard function" />
   </component>
 </project>
