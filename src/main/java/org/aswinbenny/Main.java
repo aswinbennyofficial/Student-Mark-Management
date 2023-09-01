@@ -7,21 +7,28 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         try{
+            // connects to the mysql database and conn is the connection object returned
             Connection conn=connectDb();
+
+            // displays the list of marksheet in the school
             showClasses(conn);
 
             Scanner sc_obj6=new Scanner(System.in);
-            int choice;
-            String marksheet_name;
+            int choice; // variable to saving users choice
+            String marksheet_name; // variable to store the name of marksheet on which CRUD functions are to be done
             System.out.println("\nSelect a choice:\n1. Choose an existing marksheet\n2. Create a new marksheet\n3. Quit program");
             choice=sc_obj6.nextInt();
             if(choice==1){
                 System.out.println("Enter the name of marksheet or class: ");
                 marksheet_name=sc_obj6.next();
-                dashboard(conn,marksheet_name);
+                dashboard(conn,marksheet_name); // goes to dashboard function
             }
             else if(choice==2){
-                createNewClass(conn);
+                createNewClass(conn); // goes to create a new marksheet/class
+            }
+            else{
+                System.out.println("Wrong input. Program will now exit");
+                conn.close();
             }
 
 
@@ -30,12 +37,12 @@ public class Main {
         }
     }
 
+    /*
+    dashboard function is the dashboard where users get to choose to do show, delete, create marksheet or do CRUD with student details on it
+     */
     public static void dashboard(Connection conn, String marksheet_name){
-         //function to connect to db
 
 
-
-        //System.out.println("Program loaded");
         Scanner sc_obj5=new Scanner(System.in);
         int choice; //variable to store choice of user
 
@@ -92,15 +99,17 @@ public class Main {
         }
     }
 
-
+    /*
+    deleteStudent function is used to delete a student details on basis of their rollno
+     */
     public static void deleteStudent(Connection conn,String marksheet_name){
         try{
             Scanner sc_obj6=new Scanner(System.in);
-            int rollno;
+            int rollno; //variable to store roll no
             System.out.println("Enter the roll no of student to delete: ");
             rollno=sc_obj6.nextInt();
 
-            String query="DELETE FROM "+marksheet_name+" WHERE Rollno=?";
+            String query="DELETE FROM "+marksheet_name+" WHERE Rollno=?"; //sql query to delete a student row of particular rollno
             PreparedStatement pstmt6= conn.prepareStatement(query);
             pstmt6.setInt(1,rollno);
 
@@ -139,7 +148,7 @@ public class Main {
             System.out.println("Enter new biology marks: ");
             biology=sc_obj3.nextInt();
 
-            pstmt3.setString(1,name);
+            pstmt3.setString(1,name); // 1, 2 etc are parameter index ie index of '?' in the query index starts from 1
             pstmt3.setInt(2,physics);
             pstmt3.setInt(3,maths);
             pstmt3.setInt(4,chemistry);
@@ -183,7 +192,7 @@ public class Main {
         try{
             String query="SHOW TABLES";
             PreparedStatement pstmt3= conn.prepareStatement(query);
-            ResultSet set=pstmt3.executeQuery();
+            ResultSet set=pstmt3.executeQuery(); //return value of excecuteQuery gets saved in a Resultset called set
 
             String table_names;
             System.out.println("Here are the list of Marksheets in our school: ");
@@ -212,7 +221,7 @@ public class Main {
 
             PreparedStatement pstmt2=conn.prepareStatement(query);
             pstmt2.executeUpdate();
-            System.out.println("Class "+name_of_class+" added successdully");
+            System.out.println("Class "+name_of_class+" added successfully");
             dashboard(conn,name_of_class);
 
         }catch (Exception e){
@@ -240,8 +249,7 @@ public class Main {
 
             while (no_of_students > 0) {
                 //taking input from user
-//                System.out.println("Enter the roll no: ");
-//                rollno = sc_ob1.nextInt();
+//
                 sc_ob1.nextLine(); // consumes newline character
                 System.out.println("Enter student name: ");
                 name = sc_ob1.nextLine();
@@ -294,8 +302,8 @@ public class Main {
                 int chemistry = set.getInt(5);
                 int biology = set.getInt(6);
 
-                String formattedId = String.format("%-9d", id);         // Adjust the width as needed
-                String formattedName = String.format("%-15s", name);    // Adjust the width as needed
+                String formattedId = String.format("%-9d", id);
+                String formattedName = String.format("%-15s", name);
                 String formattedPhysics = String.format("%-10d", physics);
                 String formattedChemistry = String.format("%-12d", chemistry);
                 String formattedMaths = String.format("%-8d", maths);
@@ -322,7 +330,8 @@ public class Main {
             String dbUrl="jdbc:mysql://localhost:3306/school"; //db selected is school
             String driver="com.mysql.cj.jdbc.Driver";
             String userName="root"; //username of db
-            String password = System.getenv("MYSQL_PASSKEY"); //password of db taken from environment variable MYSQL_PASSKEY
+            String password = System.getenv("MYSQL_PASSKEY"); //password of db taken from environment variable MYSQL_PASSKEY, replace string with your mysql password
+            //export MYSQL_PASSKEY="<mysql password here>" insert this line in .bashrc file in home of linux distro to save environment variable
 
             //load the mysql jbdc driver to memory
             Class.forName(driver);

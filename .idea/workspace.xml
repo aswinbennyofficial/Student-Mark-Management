@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="added delete student details option">
+    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="visual improvements">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +61,7 @@
       <workItem from="1693412162999" duration="8073000" />
       <workItem from="1693497800007" duration="4804000" />
       <workItem from="1693503005556" duration="3606000" />
-      <workItem from="1693563191151" duration="2089000" />
+      <workItem from="1693563191151" duration="3156000" />
     </task>
     <task id="LOCAL-00001" summary="addStudentDetails and displayTable functions added">
       <option name="closed" value="true" />
@@ -174,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693585232308</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="visual improvements">
+      <option name="closed" value="true" />
+      <created>1693585997169</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1693585997169</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +214,7 @@
     <MESSAGE value="visual improvement" />
     <MESSAGE value="removed conn.close function in main" />
     <MESSAGE value="added delete student details option" />
-    <option name="LAST_COMMIT_MESSAGE" value="added delete student details option" />
+    <MESSAGE value="visual improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="visual improvements" />
   </component>
 </project>
