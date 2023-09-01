@@ -1,11 +1,14 @@
 # Student Mark Management System
 
-The Student Mark Management System is a simple Java project that allows you to manage student marks using Maven and JDBC. This project provides functionality to create student classes, store their marks, edit marks, and display the mark sheet.
+The Student Mark Management System is a simple Java project that allows you to manage student marks using Maven and JDBC. This project provides functionality to create student classes, store their marks, edit marks, and display the mark sheet and more.
 
 ## Features
-- Create a new student class.
+- Show saved marksheets
+- Create a new marksheet.
+- Delete marksheet
 - Store marks for students.
 - Edit existing marks.
+- Deletea student and his marks
 - Display the mark sheet.
 
 ## Prerequisites
