@@ -22,6 +22,12 @@ The Student Mark Management System is a simple Java project that allows you to m
             <version>8.0.33</version>
 </dependency>
 ```
+## MySQL Password
+- Either add your password in the string **password** in connectDb() function.
+- or add the following line in .bashrc file in home folder of your linux distro.
+```bash 
+export MYSQL_PASSKEY="<mysql password here>"
+```
 
 ## Contributing
 Contributions are welcome! If you find any issues or would like to enhance the functionality, feel free to create a pull request.
