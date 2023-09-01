@@ -41,7 +41,7 @@ public class Main {
 
 
         System.out.println("\n\nEnter the choice");
-        System.out.println("1. Show available Marksheets\n2. Add Student Details\n3. Create New Marksheet\n4. Show Marksheet contents\n5. Edit Student Details\n6. Delete marksheet\n7. Delete student Details\n8. Quit program\n");
+        System.out.println("1. Show available Marksheets\n2. Create New Marksheet\n3. Delete marksheet\n\n4. Add Student Details\n5. Display Marksheet\n6. Edit Student Details \n7. Delete student Details\n\n8. Quit program\n");
         choice=sc_obj5.nextInt();
 
 
@@ -52,27 +52,31 @@ public class Main {
                 dashboard(conn,marksheet_name);
             }
             else if(choice==2) {
-                addStudentDetails(conn,marksheet_name);
-                dashboard(conn,marksheet_name);
-            }
-            else if(choice==3) {
                 createNewClass(conn);
                 dashboard(conn,marksheet_name);
+
+            }
+            else if(choice==3) {
+                deleteClass(conn);
             }
             else if(choice==4) {
-                displayTable(conn,marksheet_name);
+                addStudentDetails(conn,marksheet_name);
                 dashboard(conn,marksheet_name);
+
             }
             else if(choice==5) {
-                editMarkSheet(conn,marksheet_name);
+                displayTable(conn,marksheet_name);
                 dashboard(conn,marksheet_name);
+
             }
             else if(choice==6) {
-                deleteClass(conn);
+                editMarkSheet(conn,marksheet_name);
+                dashboard(conn,marksheet_name);
 
             }
             else if(choice==7){
                 deleteStudent(conn, marksheet_name);
+                dashboard(conn,marksheet_name);
             }
             else if(choice==8){
                 try {
@@ -102,7 +106,7 @@ public class Main {
 
             pstmt6.executeUpdate();
             System.out.println("Student details deleted successfully");
-            dashboard(conn,marksheet_name);
+
 
         }catch (Exception e){
             System.out.println("Error in deleteStudent(): "+e);
@@ -182,7 +186,7 @@ public class Main {
             ResultSet set=pstmt3.executeQuery();
 
             String table_names;
-            System.out.println("Here are the list of classes in our school: ");
+            System.out.println("Here are the list of Marksheets in our school: ");
             while(set.next()){
                 table_names=set.getString(1);
                 System.out.println(table_names);

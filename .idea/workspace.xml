@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="removed conn.close function in main">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="added delete student details option">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +60,7 @@
       <workItem from="1693412162999" duration="8073000" />
       <workItem from="1693497800007" duration="4804000" />
       <workItem from="1693503005556" duration="3606000" />
-      <workItem from="1693563191151" duration="1498000" />
+      <workItem from="1693563191151" duration="2089000" />
     </task>
     <task id="LOCAL-00001" summary="addStudentDetails and displayTable functions added">
       <option name="closed" value="true" />
@@ -167,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693506302169</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added delete student details option">
+      <option name="closed" value="true" />
+      <created>1693585232308</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1693585232308</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +204,7 @@
     <MESSAGE value="fixed bugs and added navigation features" />
     <MESSAGE value="visual improvement" />
     <MESSAGE value="removed conn.close function in main" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed conn.close function in main" />
+    <MESSAGE value="added delete student details option" />
+    <option name="LAST_COMMIT_MESSAGE" value="added delete student details option" />
   </component>
 </project>
