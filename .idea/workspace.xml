@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="visual improvement" />
+    <list default="true" id="3ba0abd0-d982-45d2-beaa-7c1f671809c8" name="Changes" comment="removed conn.close function in main">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aswinbenny/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +20,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -57,7 +60,8 @@
       <workItem from="1693335753731" duration="443000" />
       <workItem from="1693412162999" duration="8073000" />
       <workItem from="1693497800007" duration="4804000" />
-      <workItem from="1693503005556" duration="2887000" />
+      <workItem from="1693503005556" duration="3606000" />
+      <workItem from="1693563191151" duration="1498000" />
     </task>
     <task id="LOCAL-00001" summary="addStudentDetails and displayTable functions added">
       <option name="closed" value="true" />
@@ -155,11 +159,30 @@
       <option name="project" value="LOCAL" />
       <updated>1693505235636</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="removed conn.close function in main">
+      <option name="closed" value="true" />
+      <created>1693506302169</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1693506302169</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="addStudentDetails and displayTable functions added" />
@@ -173,6 +196,7 @@
     <MESSAGE value="fixed bugs and added dashboard function" />
     <MESSAGE value="fixed bugs and added navigation features" />
     <MESSAGE value="visual improvement" />
-    <option name="LAST_COMMIT_MESSAGE" value="visual improvement" />
+    <MESSAGE value="removed conn.close function in main" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed conn.close function in main" />
   </component>
 </project>

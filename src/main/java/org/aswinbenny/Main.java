@@ -41,7 +41,7 @@ public class Main {
 
 
         System.out.println("\n\nEnter the choice");
-        System.out.println("1. Show available Marksheets\n2. Add Student Details\n3. Create New Marksheet\n4. Show Marksheet contents\n5. Edit Student Details\n6. Delete marksheet\n7. Quit program\n");
+        System.out.println("1. Show available Marksheets\n2. Add Student Details\n3. Create New Marksheet\n4. Show Marksheet contents\n5. Edit Student Details\n6. Delete marksheet\n7. Delete student Details\n8. Quit program\n");
         choice=sc_obj5.nextInt();
 
 
@@ -72,6 +72,9 @@ public class Main {
 
             }
             else if(choice==7){
+                deleteStudent(conn, marksheet_name);
+            }
+            else if(choice==8){
                 try {
                     conn.close();
                 }catch (Exception e){
@@ -85,6 +88,26 @@ public class Main {
         }
     }
 
+
+    public static void deleteStudent(Connection conn,String marksheet_name){
+        try{
+            Scanner sc_obj6=new Scanner(System.in);
+            int rollno;
+            System.out.println("Enter the roll no of student to delete: ");
+            rollno=sc_obj6.nextInt();
+
+            String query="DELETE FROM "+marksheet_name+" WHERE Rollno=?";
+            PreparedStatement pstmt6= conn.prepareStatement(query);
+            pstmt6.setInt(1,rollno);
+
+            pstmt6.executeUpdate();
+            System.out.println("Student details deleted successfully");
+            dashboard(conn,marksheet_name);
+
+        }catch (Exception e){
+            System.out.println("Error in deleteStudent(): "+e);
+        }
+    }
 
     /*
     editMarkSheet function is used to edit the marks and name of the student by entering their rollno
@@ -186,6 +209,7 @@ public class Main {
             PreparedStatement pstmt2=conn.prepareStatement(query);
             pstmt2.executeUpdate();
             System.out.println("Class "+name_of_class+" added successdully");
+            dashboard(conn,name_of_class);
 
         }catch (Exception e){
             System.out.println("Error in createNewClass(): "+e);
