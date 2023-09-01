@@ -8,7 +8,7 @@ The Student Mark Management System is a simple Java project that allows you to m
 - Delete marksheet
 - Store marks for students.
 - Edit existing marks.
-- Deletea student and his marks
+- Delete a student and his marks
 - Display the mark sheet.
 
 ## Prerequisites
