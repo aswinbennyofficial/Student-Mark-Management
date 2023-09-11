@@ -10,7 +10,7 @@ public class Main {
             // connects to the mysql database and conn is the connection object returned
             Connection conn=connectDb();
 
-            // displays the list of marksheet in the school
+            //user defined function that displays the list of marksheet in the school
             showClasses(conn);
 
             Scanner sc_obj6=new Scanner(System.in);
